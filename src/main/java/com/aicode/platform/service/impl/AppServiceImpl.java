@@ -177,8 +177,8 @@ public class AppServiceImpl extends ServiceImpl<AppMapper, App> implements AppSe
             // 构建完成后，需要将构建后的文件复制到部署目录
             sourceDir = distDir;
         }
-        // 8. 复制文件到部署目录
-        String deployDirPath = AppConstant.CODE_DEPLOY_ROOT_DIR + File.separator + deployKey;
+        // 8. 复制文件到 code_output 下（与静态资源预览路径统一）
+        String deployDirPath = AppConstant.CODE_OUTPUT_ROOT_DIR + File.separator + deployKey;
         try {
             FileUtil.copyContent(sourceDir, new File(deployDirPath), true);
         } catch (Exception e) {

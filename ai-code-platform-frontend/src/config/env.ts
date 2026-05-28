@@ -14,7 +14,7 @@ export const STATIC_BASE_URL = `${API_BASE_URL}/static`
 
 // 获取部署应用的完整URL
 export const getDeployUrl = (deployKey: string) => {
-  return `${DEPLOY_DOMAIN}/${deployKey}`
+  return `${STATIC_BASE_URL}/${deployKey}/`
 }
 
 // 获取静态资源预览URL
